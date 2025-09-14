@@ -51,23 +51,23 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                    {{ Auth::user()->name }}aaa
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    
-                                        @role('admin')
-                                        <a class="dropdown-item" href="{{ route('admin.dashboard') }}">Dashboard</a>
+                                   @role('admin')
+                                        <a class="dropdown-item" href="{{ route('admin.dashboard') }}">Dashboard Admin|</a>
                                         @endrole
 
                                         @role('editor')
-                                        <a class="dropdown-item" href="{{ route('editor.dashboard') }}">Dashboard</a>
+                                        <a class="dropdown-item" href="{{ route('editor.dashboard') }}">Dashboard Editor</a>
                                         @endrole
-
-                                    <a class="dropdown-item" href="#"
-                                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
