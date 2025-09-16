@@ -14,11 +14,17 @@ class Category extends Model
         'meta_title',
         'meta_description',
     ];
+    //auto generate slug from name, to SEO, when save or update
     protected static function boot()
     {
         parent::boot();
         static::saving(function($category){
             $category->slug = Str::slug($category->name);
         });
+    }
+    //stablish relationship with services, a category has many services
+    public function services()  
+    {
+        return $this->hasMany(Service::class);       
     }
 }

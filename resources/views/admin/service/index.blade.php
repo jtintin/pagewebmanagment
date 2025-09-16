@@ -8,28 +8,27 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
-                    <p>Categorías</p>
+                    <p>Servicios</p>
                     <div class="class btn-group">
                         <a href="{{route('admin.dashboard')}}" class="btn btn-danger">X</a>
-                        <a href="{{route('admin.category.create')}}" class="btn btn-dark">Nueva categoría</a>
+                        <a href="{{route('admin.service.create')}}" class="btn btn-dark">Nuevo servicio</a>
                     </div>
                 </div>
                 <div class="car-body">
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Actions</th>
+                                <th>Nombre</th>
+                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($categories as $category)
+                            @foreach($services as $service)
                             <tr>
-                            <td>{{$category->name}}</td>
+                            <td>{{$service->title}}</td>
                             <td>
-                                <a href="{{route('admin.category.show', $category)}}" class="btn btn-dark">Servicios</a>
-                                <a href="{{route('admin.category.edit', $category)}}" class="btn btn-dark">Editar</a>
-                                <form action="{{route('admin.category.destroy',$category)}}" method="POST" style="display:inline">
+                                <a href="{{route('admin.service.edit', $service)}}" class="btn btn-dark">Editar</a>
+                                <form action="{{route('admin.service.destroy',$service)}}" method="POST" style="display:inline">
                                     @csrf
                                     @method('DELETE')
                                     <button onclick="return confirm('¿Eliminar registro?')" class="btn btn-dark">Eliminar</button>

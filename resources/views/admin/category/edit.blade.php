@@ -9,16 +9,22 @@
                 @method('PUT')
                     <div class="card-header d-flex justify-content-between align-items-center">
                     <p>Actualizar categoría</p>
-                    <a href="{{route('admin.category.index')}}">X</a>
-                    <button type="submit">Actualizar</button>
+                        <div class="btn-group">
+                            <a href="{{route('admin.category.index')}}" class="btn btn-danger">X</a>
+                            <button type="submit" class="btn btn-dark">Actualizar</button>
+                        </div>
                     </div>
                     <div class="car-body">
                         @include('partials.message')
                      <div class="car-body">
-                        <input type="text" name="name"  value="{{old('name',$category->name)}}" required maxlength="30">
-                        <input type="textarea" name="description"  value="{{old('description',$category->description)}}" required></textarea>
-                        <input type="text" name="meta_title"  value="{{old('meta_title',$category->meta_title)}}" required maxlength="70">
-                        <input type="text" name="meta_description" value="{{old('meta_description',$category->meta_description)}}" required maxlength="160"> 
+                        <label for="name">Nombre:</label>
+                        <input type="text" class="form-control" name="name"  value="{{old('name',$category->name)}}" required maxlength="30">
+                        <label for="description">Descripción:</label>
+                        <input type="textarea" class="form-control" name="description"  value="{{old('description',$category->description)}}" required></textarea>
+                        <label for="meta_title">meta_title:</label>
+                        <input type="text" class="form-control" name="meta_title"  value="{{old('meta_title',$category->meta_title)}}" required maxlength="70">
+                        <label for="meta_description">meta_description:</label>
+                        <input type="text" class="form-control" name="meta_description" value="{{old('meta_description',$category->meta_description)}}" required maxlength="160"> 
                         <br>
                     </div>
 

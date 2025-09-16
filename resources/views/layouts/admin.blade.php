@@ -51,12 +51,12 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}aaa
+                                    {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                    @role('admin')
-                                        <a class="dropdown-item" href="{{ route('admin.dashboard') }}">Dashboard Admin|</a>
+                                        <a class="dropdown-item" href="{{ route('admin.dashboard') }}">Dashboard</a>
                                         @endrole
 
                                         @role('editor')

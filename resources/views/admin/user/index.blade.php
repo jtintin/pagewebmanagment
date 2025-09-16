@@ -31,11 +31,11 @@
                             <td>{{implode(', ',$user->getRoleNames()->toArray())}}</td>
                             <td>{{implode(', ',$user->getPermissionNames()->toArray())}}</td>
                             <td>
-                                <a href="{{route('admin.user.edit', $user)}}">Edit</a>
+                                <a href="{{route('admin.user.edit', $user)}}" class="btn btn-dark">Edit</a>
                                 <form action="{{route('admin.user.destroy',$user)}}" method="POST" style="display:inline">
                                     @csrf
                                     @method('DELETE')
-                                    <button onclick="return confirm('Are you sure, delete register?')">Delete</button>
+                                    <button onclick="return confirm('Are you sure, delete register?')" class="btn btn-dark">Delete</button>
                                 </form>
                             </td> 
                             </tr>

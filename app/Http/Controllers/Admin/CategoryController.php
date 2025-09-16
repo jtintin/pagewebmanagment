@@ -64,4 +64,12 @@ class CategoryController extends Controller
         $category->delete();
         return redirect()->route('admin.category.index')->with('success', 'Categoria eliminada con exito');
     }   
+    //show all category services, create session and redirect to services index
+    public function show(Category $category)
+    {
+        //create session
+     \Session::put('category_id', $category->id);
+     return  redirect('admin/service');
+    }
+
 }   

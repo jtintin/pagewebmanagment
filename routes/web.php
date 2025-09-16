@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ServiceController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,9 +24,11 @@ Route::prefix('admin')->name('admin.')-> middleware(['auth','role:admin'])->grou
     Route::get('/dashboard', [HomeController::class, 'adminDashboard'])->name('dashboard');
     //admin/user
     Route::resource('user', UserController::class);
-    //admin/users   
+    //admin/category
     Route::resource('category', CategoryController::class);
-});
+    //admin/service 
+    Route::resource('service', ServiceController::class);
+ });
 //routes editor access limited by permissions
 Route::prefix('editor')-> middleware(['auth','role:editor'])->group(function(){
     //admin/dashboard
