@@ -27,4 +27,9 @@ class Category extends Model
     {
         return $this->hasMany(Service::class);       
     }
+    //stablish relationship with posts, a category has many posts
+    public function posts()
+    {
+        return $this->hasMany(Post::class); 
+    }
 }

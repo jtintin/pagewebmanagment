@@ -6,6 +6,8 @@ use App\Http\Controllers\PublicController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\ProfileController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,6 +30,10 @@ Route::prefix('admin')->name('admin.')-> middleware(['auth','role:admin'])->grou
     Route::resource('category', CategoryController::class);
     //admin/service 
     Route::resource('service', ServiceController::class);
+    //admin/post
+    Route::resource('post', PostController::class);
+    //admin/profile 
+    Route::resource('profile', ProfileController::class);
  });
 //routes editor access limited by permissions
 Route::prefix('editor')-> middleware(['auth','role:editor'])->group(function(){

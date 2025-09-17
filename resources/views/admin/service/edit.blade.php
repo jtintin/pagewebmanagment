@@ -46,7 +46,7 @@
                         <label for="image_url">Imagen:</label>
                         @if ($service->image_url)
                             <br>
-                            <img src="{{$service->image_url}}" alt="{{$service->title}}" width="100">
+                            <img src="{{$service->image_url}}" alt="{{$service->title}}" class="img-fluid">
                             <br>
                         @endif
                         <input type="file" class="form-control" name="image_url"> 
